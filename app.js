@@ -8,7 +8,7 @@ const getSummary = async () => {
     `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=&explaintext=&titles=${subject}&format=json`
   );
   const id = Object.keys(data.query.pages)[0];
-  console.log(data.query.pages[id].extract);
+  console.log(data.query.pages[id].extract || "No summary found");
 };
 const main = async () => {
   await getSummary();
